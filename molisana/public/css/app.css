@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  width: 100%;
+}
+
+header .logo {
+  margin: auto;
+}
+
+header img.logo {
+  width: 300px;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  background-color: royalblue;
+}
+
+main .container {
+  max-width: 80%;
+}
+
+main .container .lunga {
+  display: flex;
+}
+
+main .container .img_pasta {
+  width: 300px;
+}
+
