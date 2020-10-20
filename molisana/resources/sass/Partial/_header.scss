@@ -1,15 +1,38 @@
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30%;
+    height: 40%;
     width: 100%;
 
     .logo {
-        margin: auto;
+        width: 100%;
+        padding: 25px;
+        text-align: center;
     }
     img.logo {
         width: 300px;
         padding: 20px;
     }
+
+
+    
+    .nav-list {
+        display: flex;
+        justify-content: center;
+
+
+
+        a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 24px;
+
+
+            &.active {
+                background-color: royalblue;
+            }
+        }
+
+    }
+
 }

@@ -1,3 +1,5 @@
+@extends('layouts.layout')
+
 @php
     $data = '[
   {
@@ -139,41 +141,59 @@
   }
 @endphp
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <title>Molisana</title>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img class = "logo" src="{{asset('images/logo.png')}}" alt="">
-        </div>
-    </header>
+@section('title')
+    La Molisana
+@endsection
 
-    <main>
-        <div class="container">
-            <section class ="lunga">
-                @if ($lunga)
-                    <h2>Lunga</h2>
-                    <ul>
-                        @foreach ($lunga as $prodotto)
-                        <li>
-                            <img class = "img_pasta" src="{{$prodotto["src"]}}" alt="">
-                            <h3>{{$prodotto["titolo"]}}</h3>
-                        </li>
-                        @endforeach
-                    </ul>
-                @endif
-            </section>
-            <section></section>
-            <section></section>
-        </div>
-    </main>
 
-    <footer></footer>
-</body>
-</html>
+{{-- @include('partials.header') --}}
+   
+@section('mainContent')
+  <div class="container">
+    <section class ="lunga">
+        @if ($lunga)
+            <h2>Lunga</h2>
+            <ul class = "prodotto">
+                @foreach ($lunga as $prodotto)
+                <li>
+                    <img class = "img_pasta" src="{{$prodotto["src"]}}" alt="">
+                    <h3>{{$prodotto["titolo"]}}</h3>
+                </li>
+                @endforeach
+            </ul>
+        @endif
+    </section>
+
+    <section class ="corta">
+        @if ($corta)
+          <h2>corta</h2>
+          <ul class = "prodotto">
+            @foreach ($corta as $prodotto)
+            <li>
+                <img class = "img_pasta" src="{{$prodotto["src"]}}" alt="">
+                <h3>{{$prodotto["titolo"]}}</h3>
+            </li>
+            @endforeach
+          </ul>
+        @endif
+    </section>
+
+    <section class ="cortissima">
+        @if ($cortissima)
+          <h2>cortissima</h2>
+          <ul class = "prodotto">
+            @foreach ($cortissima as $prodotto)
+            <li>
+                <img class = "img_pasta" src="{{$prodotto["src"]}}" alt="">
+                <h3>{{$prodotto["titolo"]}}</h3>
+            </li>
+            @endforeach
+          </ul>
+        @endif
+
+    </section>
+  </div>
+
+@endsection
+
+@include('partials.footer')

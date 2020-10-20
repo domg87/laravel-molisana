@@ -1,20 +1,26 @@
 main {
     display: flex;
     width: 100%;
-    background-color: royalblue;
+    background-image: url('/images/fondo-pag-speciali.jpg');
     
 
     .container {
        
         max-width: 80%;
 
-        .lunga {
+        .lunga, .corta, .cortissima {
             display: flex;
         }
 
 
         .img_pasta {
             width: 300px;
+        }
+
+        .prodotto {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
     }
 }
