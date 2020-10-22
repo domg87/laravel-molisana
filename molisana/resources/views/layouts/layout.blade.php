@@ -12,5 +12,7 @@
         @yield('mainContent')
     </main>
 @include('partials.footer')
+<script src="{{asset('js/app.js')}}"></script>
+@yield('style.js')
 </body>
 </html>

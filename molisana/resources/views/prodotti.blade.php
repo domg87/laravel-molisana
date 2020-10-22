@@ -10,6 +10,7 @@
     $cortissima = [];
 
     foreach ($data as $prodotto) {
+        $prodotto["id"] = $key;
         if ($prodotto['tipo'] == "lunga") {
             $lunga[] = $prodotto;
         } elseif ($prodotto['tipo'] == "corta") {
@@ -36,7 +37,7 @@
                 @foreach ($lunga as $prodotto)
                 <li>
                     <img class = "img_pasta" src="{{$prodotto["src"]}}" alt="">
-                    <h3>{{$prodotto["titolo"]}}</h3>
+                <a href="prodotti/show/{{$prodotto["id"]}}"><h3>{{$prodotto["titolo"]}}</h3></a>
                 </li>
                 @endforeach
             </ul>
@@ -52,7 +53,7 @@
             @foreach ($corta as $prodotto)
             <li>
                 <img class = "img_pasta" src="{{$prodotto["src"]}}" alt="">
-                <h3>{{$prodotto["titolo"]}}</h3>
+                <a href="prodotti/show/{{$prodotto["id"]}}"><h3>{{$prodotto["titolo"]}}</h3></a>
             </li>
             @endforeach
           </ul>
@@ -68,7 +69,7 @@
             @foreach ($cortissima as $prodotto)
             <li>
                 <img class = "img_pasta" src="{{$prodotto["src"]}}" alt="">
-                <h3>{{$prodotto["titolo"]}}</h3>
+                <a href="prodotti/show/{{$prodotto["id"]}}"><h3>{{$prodotto["titolo"]}}</h3></a>
             </li>
             @endforeach
           </ul>
